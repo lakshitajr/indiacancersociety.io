@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <title>ICS Double Navbar</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 30px;
+      }
+      /* LOGO overlapping both navbars */
+.double-logo {
+    position: absolute;
+    left: 50px;         /* move horizontally */
+    top: 20px;          /* adjust how much it overlaps */
+    z-index: 9999;      /* stays on top of both navbars */
+    height: 100px;      /* adjust size */
+}
+
+
+     .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+    
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 30px 18px !important;
+      }
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+ /* Purple HQ Box */
+        .hq-box {
+            background: #5a0f7c;
+            color: white;
+            padding: 30px;
+            border-radius: 25px;
+        }
+
+        /* Orange Blocks */
+        .city-box {
+            background: #e98539;
+            color: white;
+            padding: 25px;
+            border-radius: 25px;
+            min-height: 260px;
+        }
+        .city-box h5 {
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        .city-box a {
+            color: white;
+            text-decoration: underline;
+        }
+.city-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.city-row > div {
+  display: flex;
+}
+
+.city-box {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+}
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+
+    <!-- Social Media Icons (Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- ========================= TOP NAVBAR ========================= -->
+     <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a  class="nav-link fs-5" href="aboutus.html">About us</a></li>
+            <li class="nav-item">
+              <a  class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fs-5" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item fs-5" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item fs-5" href="collab.html">Collaborate</a></li>
+                <li><a class="dropdown-item fs-5" href="partners.html">Our Partners</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item "><a class="nav-link fs-5" href="events.html">Whats new</a></li>
+            <li class="nav-item"><a class="nav-link fs-5" href="careers.html">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <a href="index.html"> <img src="icslogo.png" class="double-logo" alt="ICS Logo"> </a>  
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul style="background-color: #ffffff; font-weight: -200px;" class="dropdown-menu">
+                <li><a  class="dropdown-item fs-5" href="screening.html">Screening</a></li>
+                <li><a class="dropdown-item fs-5" href="cancercure.html">Cancer Cure</a></li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html">Survivorship & Rehab</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html">UGAM Support Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="hq-box fs-4">
+                <p><strong>National Head Quarters</strong><br>
+                74, Jerbai Wadia Road, Bhoiwada, Parel,<br>
+                Mumbai - 400012 (India)</p>
+
+                <p><strong>Phone:</strong> +91-22-2413 9445 / 51<br>
+                <strong>Email:</strong> <a href="mailto:info@indiancancersociety.org" class="text-white">
+  info@indiancancersociety.org
+</a><br>
+                <strong>Cancer Helpline:</strong> 1800-22-1951</p>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img src="icslogo.png" alt="ICS Logo" style="height:200px;">
+        </div>
+    </div>
+</div>
+</nav>
+<!-- ========================================================= -->
+<!-- CITY BLOCKS -->
+<!-- ========================================================= -->
+<div class="container mb-5">
+    <div class="row g-4">
+
+        <!-- Bangalore -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">BANGALORE</h5>
+                <p class="fs-5">230/15, Sri Ranga Dhama,<br>
+                5th Cross, 9th Main 2nd Block,<br>
+                Jayanagar, Bengaluru 560 011<br><br>
+
+                +91 9513074567<br>
+                <a href="#">icsblr@indiancancersociety.org</a><br>
+                <a href="#">www.indiancancersocietybangalore.org</a></p>
+            </div>
+        </div>
+
+        <!-- Delhi -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">DELHI</h5>
+                <p class="fs-5">B 63 & 64 Basement<br>
+                South Extension Part 2<br>
+                New Delhi 110 049<br><br>
+
+                +91 11-2625 9572 / 2626 4907 / 4942 4723<br>
+                <a href="#">incansoc3_cancer@yahoo.co.in</a><br>
+                <a href="#">www.indiancancersocietydelhi.in</a><br>
+                ICS Helpline: +91 99105 16562</p>
+            </div>
+        </div>
+
+        <!-- Kolkata -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">KOLKATA</h5>
+                <p class="fs-5">6G, Elgin Road,<br>
+                Kolkata 700 020<br><br>
+
+                Mr. R S Goenka (Chairman)<br>
+                +9133 2283 2426<br><br>
+
+                Dr. Arunabha Sengupta (Hon. Secretary)<br>
+                +9133 2283 2426<br>
+                <a href="#">arunabhaseng@yahoo.in</a></p>
+            </div>
+        </div>
+
+        <!-- Lucknow -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">LUCKNOW</h5>
+               <p class="fs-5"> Dept of Surgery<br>
+                King George Medical University<br>
+                Lucknow 226 003<br><br>
+
+                Dr. A N Shrivastava (Chairman)<br>
+                Prof. Shailendra Yadav (Hon. Secretary)<br>
+                +91 9935554308<br>
+                <a href="#">skkgmu@yahoo.co.in</a></p>
+            </div>
+        </div>
+
+        <!-- Nagpur -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">NAGPUR</h5>
+                <p class="fs-5"> Manav Mandir Plot no. 505/C/A/2<br>
+                Sakkardara Police Station Road<br>
+                Sakkardara Square Above HDFC Bank<br>
+                Nagpur - 440 009<br><br>
+
+                Dr. Girish Gandhi (Chairman)<br>
+                +91 0712 2557911</p>
+            </div>
+        </div>
+
+        <!-- Patna -->
+        <div class="col-md-4">
+            <div class="city-box">
+                <h5 class="fs-1">PATNA</h5>
+               <p class="fs-5"></p> Krishna Agencies Pvt. Ltd.<br>
+                Boring Road<br>
+                Patna 800 001<br><br>
+
+                Mr. Navin Gupta (Vice Chairman)<br>
+                +91 93347 15522<br>
+                <a href="#">ngkapl@gmail.com</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br>
+              Jerbai Wadia Road, <br>
+              Bhoiwada, Parel, <br>
+              Mumbai – 400012 (India) <br>
+              +91-22-2413 9445 / 51 <br>
+              info@indiancancersociety.org 
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+         <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <!-- <img src="icslogo.png" class="double-logo" alt="ICS Logo"> -->
+
+</html>
+

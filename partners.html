@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collaborate — Indian Cancer Society</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Zain font -->
+  <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet">
+
+  <style>
+    :root{
+      --ics-purple: #5a0f7c;
+      --ics-orange: #ff7b00;
+      --ics-peach: #eed4d9;
+      --page-max: 1150px;
+    }
+
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: 'Zain', sans-serif; background:#fff; color:#111; }
+
+    a { text-decoration:none; color:inherit; }
+
+    /* ========== Top Navbar ========== */
+    .ics-gradient {
+      background: linear-gradient(to right, var(--ics-purple), var(--ics-orange));
+      color: white;
+    }
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+    /* HERO */
+    .hero{
+      position: relative;
+      width: 100vw;
+      height: 68vh;
+      margin-left: calc(50% - 50vw);
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      background:#000;
+    }
+    .hero-bg{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .hero-overlay{ position:relative; z-index:2; width:100%; max-width:var(--max-width); margin:0 auto; padding:3.25rem 1.2rem; color:#fff; }
+    .hero-title{ font-size:5rem; font-weight:900; line-height:0.95; text-transform:uppercase; text-shadow:0 8px 22px rgba(0,0,0,0.45);margin-left: 100px; }
+
+    /* content wrapper */
+    .section { max-width:var(--max-width); margin:0 auto; padding:3rem 1.2rem; }
+
+    /* purple wash */
+    .top-wash {
+      background: linear-gradient(180deg,
+        rgba(255,255,255,1) 0%,
+        rgba(90,15,124,0.12) 12%,
+        rgba(90,15,124,0.22) 32%,
+        rgba(90,15,124,0.40) 60%,
+        rgba(255,255,255,1) 100%);
+    }
+
+    h2.section-head { color:var(--ics-purple); font-size:2rem; font-weight:800; margin-bottom:1rem; }
+    p.lead { color:#333; line-height:1.6; }
+
+    .callout {
+      background:#fff;
+      border-radius:34px;
+      padding:0.9rem 1.2rem;
+      display:block;
+      margin:1.2rem auto;
+      width:fit-content;
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+      font-weight:700;
+      color:var(--ics-purple);
+      text-align:center;
+    }
+
+    /* --- INFO LAYOUT --- */
+    .info-grid-custom { margin-top: 2rem; }
+
+    .info-card {
+      background:var(--ics-purple);
+      color:#fff;
+      border-radius:18px;
+      padding:1.4rem;
+      box-shadow:0 10px 24px rgba(90,15,124,0.08);
+    }
+
+    /* wide top card */
+    .wide-card {
+      width:100%;
+      min-height:220px;
+      margin-bottom:1rem;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    /* two bottom cards row */
+    .two-cards-row { margin-top:0.75rem; }
+    .two-cards-row .info-card {
+      min-height:180px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .info-card h5 { margin:0 0 0.6rem 0; font-size:1.05rem; font-weight:700; }
+    .info-card ul { padding-left:1rem; margin:0; }
+    .info-card p { margin:0; opacity:0.95; }
+
+    /* AKITF and other sections */
+    .akitf-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.25rem; margin-top:1.25rem; }
+    .akitf-box { background:var(--ics-purple); color:#fff; border-radius:16px; padding:1rem; box-shadow:0 8px 20px rgba(0,0,0,0.08); min-height:220px; }
+
+  .orange-band {
+  background: linear-gradient(0deg,
+        rgba(255, 123, 0, 1) 0%,
+          #ffa24d8c 40%,
+          #ffa24d2e 75%,
+          #ffa24d00 100%);
+  
+  padding: 4.5rem 0;   
+  margin-top: 2rem;   
+}
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+.double-logo {
+    position: absolute;
+    left: 50px;         /* move horizontally */
+    top: 20px;          /* adjust how much it overlaps */
+    z-index: 9999;      /* stays on top of both navbars */
+    height: 100px;      /* adjust size */
+}
+    /* FOOTER */
+.ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      } .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      } .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }.social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+  </style>
+  <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+</head>
+
+<body >
+
+ <!-- ========================= TOP NAVBAR ========================= -->
+     <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a  class="nav-link fs-5" href="aboutus.html">About us</a></li>
+            <li class="nav-item">
+              <a  class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fs-5" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item fs-5" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item fs-5" href="collab.html">Collaborate</a></li>
+                <li><a class="dropdown-item fs-5" href="partners.html">Our Partners</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item "><a class="nav-link fs-5" href="events.html">Whats new</a></li>
+            <li class="nav-item"><a class="nav-link fs-5" href="careers.html">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <a href="index.html"> <img src="icslogo.png" class="double-logo" alt="ICS Logo"> </a>  
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul style="background-color: #ffffff; font-weight: -200px;" class="dropdown-menu">
+                <li><a  class="dropdown-item fs-5" href="screening.html">Screening</a></li>
+                <li><a class="dropdown-item fs-5" href="cancercure.html">Cancer Cure</a></li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html">Survivorship & Rehab</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html">UGAM Support Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="cancercure.png" class="hero-bg" alt="Cancer Cure Hero">
+    <div class="hero-overlay">
+      <div class="hero-title">SUPPORTERS AND<br> PARTNERS</div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <div class="top-wash m-5">
+    <section class="section">
+
+      <p class="fs-5">
+The Indian Cancer Society – Cancer Cure Fund provides financial aid for underprivileged cancer patients across India, ensuring timely treatment for cancers that are often curable when detected early. Since its launch, the project has helped thousands return to healthy, productive lives, with 45% of beneficiaries aged 16–45.
+This first-of-its-kind initiative was created in partnership with HDFC Mutual Fund, which in 2011 introduced a closed-ended debt fund allowing investors to donate 50% or up to 75% of their dividend income to ICS. The generous contributions of these investors, along with HDFC Mutua      </p>
+
+      <div class="callout">Disbursed Rs. 302.72 crores for the treatment of more than 16,000+ patients since inception till March'25.</div>
+
+      <!-- INFO LAYOUT -->
+      <div class="info-grid-custom">
+
+        <!-- WIDE CARD (top) -->
+        <div class="info-card wide-card; fs-5" style="padding-top: 50px; padding-left: 70px; padding-bottom: 50px;">
+          <h3>Patient eligibility criteria</h3><br>
+          <ul>
+            <li>Family income should not exceed Rs 4 lakh per year.</li>
+            <li>Patient should be treated at ICS empanelled hospital only. </li>
+            <li>Patients should be registered under general category.</li>
+            <li>Projected survival rate 50% for adult patients and 60% for pediatric patients.</li>
+            <li>Only for Indian citizens.</li>
+          </ul>
+        </div>
+
+        <!-- TWO CARDS ROW (below) -->
+        <div class="row two-cards-row g-3">
+
+  <div class="col-md-6 d-flex">
+    <div class="info-card small-card flex-fill; fs-5" style="padding-right: 170px;">
+      <!-- card content -->
+
+              <h3>Sanction criteria</h3><br>
+              <p>Maximum sanction Rs 5 lakhs and for Bone Marrow <br>Transplant Rs.8 lakh.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="info-card small-card; fs-5" style="padding-left: 70px;">
+              <h3>Treatment protocol covered</h3><br>
+              <ul>
+                <li>Chemotherapy</li>
+                <li>Radiation</li>
+                <li>Surgery</li>
+                <li>Supportive care</li>
+                <li>Prosthesis</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+    </div>
+  </div>
+</div>
+
+  <!-- AKITF SECTION -->
+  <section class="section m-5" style="padding-top: 10px;">
+    <h2 class="section-head">Arun Kurkure Initiation and Treatment Fund (AKITF)</h2>
+
+    <p class="fs-5">
+This project was launched in April 2014 in Mumbai to support underprivileged cancer patients towards initial diagnostic tests and funding for emergency treatment, without any loss of time.<br><br>
+Many patients come to a cancer hospital, but are unable to do the diagnostic tests due to lack of funds. They go back home and return to the hospital when the cancer is in an advanced stage, making treatment difficult.<br><br>
+This immediate assistance is a big help to patients, it reduces the drop rate of patients and allows them to start treatment giving them time to look for other sources of assistance.<br><br>
+The Project was re-launched on 4th Feb 2019 at our empanelled hospitals.</p><br>
+
+    <div class="akitf-grid">
+      <div class="akitf-box" style="padding-top: 30px; padding-left: 50px;">
+        <h3>Patient eligibility criteria</h3><br>
+        <ul class="fs-5">
+          <li>Indian citizens only</li><br>
+          <li>No discrimination on account of age, sex or religion</li><br>
+          <li>The patient must be registered as a general ward patient </li><br>
+          <li>Family income not exceeding Rs 4 lakhs per annum</li><br>
+        <li>Initial treatment will be applicable only for cancer diagnosed patients</li>
+
+        </ul>
+        <p style="margin-top:0.6rem; font-size:0.9rem;"></p>
+      </div>
+
+      <div class="akitf-box "style="padding-top: 30px; padding-left: 50px;">
+        <h3>Documentation from patient</h3><br>
+        <ul class="fs-5"> 
+          <li>Aadhar card of the patient (if pediatric patient, then Aadhar<br> card of the one of the parents)</li><br>
+          <li>Income proof that patient’s family income is not exceeding <br>Rs 4 lakhs per annum </li><br>
+          <li>Registration page confirming patient belonging to general <br>category of the empanelled hospital </li><br>
+          <li>Prescription of the treating doctor for initial diagnosis </li><br>
+          <li>Cost certificate for initial treatment from the treating doctor</li><br>
+          <li>Additional documents for initial treatment: All cancer reviewed <br>and attached to the documentation by the hospital</li><br>
+          <li>Photo of the patient</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORANGE GRADIENT -->
+  <div class="orange-band">
+    <section class="section" >
+      <p style=" color:#5a0f7c; text-align:center; font-weight:700; ">
+       Maximum of Rs 25,000 - per patient is sanctioned for initial diagnosis & initial treatment.
+Disbursed Rs. 18.87 crores for the initial investigation and treatment of more than 13,000+ patients since relaunch till March'25.
+      </p>
+    </section>
+  </div>
+
+  <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br>
+              Jerbai Wadia Road, <br>
+              Bhoiwada, Parel, <br>
+              Mumbai – 400012 (India) <br>
+              +91-22-2413 9445 / 51 <br>
+              info@indiancancersociety.org 
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <!-- Load Bootstrap JS (only once, and INSIDE body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html> 

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <title>ICS Double Navbar</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+.main-wrapper {
+        padding: 60px 5%;
+        background: url("ugam-bg.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    /* Soft purple overlay */
+    .main-wrapper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(227, 41, 255, 0.25);
+    }
+
+    .content-layer {
+        position: relative;
+        z-index: 2;
+    }
+
+    .logo-row img {
+        height: 90px;
+        margin-right: 25px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        color: #4b1361;
+        margin-top: 40px;
+    }
+
+    h5 {
+        color: #4b1361;
+        font-weight: 700;
+        margin-bottom: 0;
+    }
+
+    p, li {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+    }
+.ugam-section {
+  padding: 80px 60px;
+  background: linear-gradient(to bottom, #ffffff, #d08edc);
+  background-image:
+    url('grid-pattern.png'),
+    linear-gradient(to bottom, #ffffff, #d08edc);
+  background-size: contain, cover;
+}
+
+    .mission-box ul {
+        padding-left: 20px;
+    }
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+ /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      /* LOGO overlapping both navbars */
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+.double-logo {
+    position: absolute;
+    left: 50px;         /* move horizontally */
+    top: 20px;          /* adjust how much it overlaps */
+    z-index: 9999;      /* stays on top of both navbars */
+    height: 100px;      /* adjust size */
+}
+
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.5rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+.hero-section {
+            background: url('volunteerbg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 30px 18px !important;
+      }
+      .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .hero-section h1 {
+            position: relative;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+ /* Card Section */
+       
+
+      
+
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+.ics-footer p,
+.ics-footer li,
+.ics-footer {
+    color: white !important;
+}
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+        
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+ .volunteerheading{
+    font-size: 50px;
+ }
+
+        
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .ics-logo {
+        height: 75px;
+      }
+      /* LOGO overlapping both navbars */
+      
+
+         .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      .hero-section {
+        background: url(".jpg") no-repeat center center;
+        background-size: cover;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: white;
+        text-align: center;
+      }
+      
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-section h1 {
+        position: relative;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .btn-volunteer {
+        position: relative;
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: #ff6600;
+        border: none;
+      }
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+      /* Card Section */
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+
+/* White card styling */
+.ugam-card {
+    /* background: #ffffff; */
+    border-radius: 20px;
+    
+    padding: 80px 60px;
+  background: linear-gradient(to bottom, #ffffff, #7a0d8e);
+
+  
+  background-size: contain, cover;
+}
+
+/* Title styling similar to screenshot */
+.ugam-title {
+    font-size: 3rem;
+    color: #6d1b8c; /* purple tone */
+    letter-spacing: 2px;
+}
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgb(255, 255, 255);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .hero {
+        background: linear-gradient(
+            to bottom,
+            rgba(98, 0, 153, 0.4),
+            rgba(255, 126, 95, 0.3)
+          ),
+          url("your-image.jpg") center/cover no-repeat;
+        height: 380px;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      /* PURPLE LEFT CARD */
+      
+
+      /* STATS CARD */
+      
+
+      /* STAT IMAGE BOX */
+     
+
+      /* GENERAL PAGE TYPOGRAPHY */
+      .section-container {
+        padding: 60px 50px;
+      }
+
+      h2 {
+        color: #5b1a82;
+        font-weight: 700;
+      }
+
+      .bold-line {
+        font-weight: bold;
+        color: #5b1a82;
+      }
+      .hero-screening {
+        height: 620px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(25, 0, 58, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("doc.jpg"); /* replace with your hero image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      /* optional text styling */
+      .hero-screening h1 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+     .ugam-section {
+  padding: 80px 60px;
+  background: linear-gradient(to bottom, #ffffff, #d08edc);
+  background-image:
+    url('grid-pattern.png'),
+    linear-gradient(to bottom, #ffffff, #d08edc);
+  background-size: contain, cover;
+}
+
+    </style>
+
+    <!-- Social Media Icons (Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body >
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <!-- ========================= TOP NAVBAR ========================= -->
+     <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a  class="nav-link fs-5" href="aboutus.html">About us</a></li>
+            <li class="nav-item">
+              <a  class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fs-5" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item fs-5" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item fs-5" href="collab.html">Collaborate</a></li>
+                <li><a class="dropdown-item fs-5" href="partners.html">Our Partners</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item "><a class="nav-link fs-5" href="events.html">Whats new</a></li>
+            <li class="nav-item"><a class="nav-link fs-5" href="careers.html">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <a href="index.html"> <img src="icslogo.png" class="double-logo" alt="ICS Logo"> </a>  
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul style="background-color: #ffffff; font-weight: -200px;" class="dropdown-menu">
+                <li><a  class="dropdown-item fs-5" href="screening.html">Screening</a></li>
+                <li><a class="dropdown-item fs-5" href="cancercure.html">Cancer Cure</a></li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html">Survivorship & Rehab</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html">UGAM Support Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <section
+       "
+      class=" d-flex"
+    >
+      <div style="background-color: white;" class="container text-white " >
+        <h1
+          style="font-size:70px; justify-items: left; color:  #6a1b9a;padding-right: 300px;"
+          class=" fw-bolder"
+        >
+        <img style="height: 150px; padding-left: 100px;" src="ugam-logo copy.png" alt="">
+          <br><br>UGAM SUPPORT GROUP
+        </h1>
+        
+      </div>
+    </section>
+    <div style="background-color: white" class="row gx-5">
+      <!-- LEFT PURPLE CARD -->
+      
+      <!-- RIGHT TEXT + STATS -->
+      <div style="padding-left: 200px; padding-right: 200px;padding-bottom: 100px;" class="col">
+        <p class="display-4 bold-line mt-5 ms-1">
+          Support Group of Childhood Cancer Survivors
+        </p>
+
+        <p class="fs-4">
+          Ugam is a voluntary support group which has been formed by Childhood Cancer Survivors from the After Completion of Therapy (ACT) clinic of Tata Memorial Hospital, inspired by the survivors from across the globe with whom they interacted during the International Society of Pediatric Oncology ( SIOP ) meeting in October 2007. Ugam was formally launched on 7th June 2009,
+           first sunday of June celebrated as Cancer Survivors Day across the world..
+        </p>
+
+        <p class="fs-4">
+          UGAM means To Rise, underscoring the determination of childhood cancer survivors, to rise above all obstacles in life & be VICTORS. The dream of such a support group was seen by a childhood cancer survivor, Shobhit Kaushal, who was a budding & very talented painter-poet who unfortunately was overpowered by his disease. He held his first art exhibition in March 2009 while fighting a losing battle with cancer & succumbed a month later. Shobhit, through his courage and indomitable spirit, touched the lives of so many people during his own short life. He fought cancer on his terms, never giving up and was full of hope and a feisty spirit right till the end. He left behind legacy of his fighting spirit, and vision to start the support group that will help millions of childhood cancer survivors to build up their life from ground zero & live life like normal human beings UGAM is the youngest unit of the oldest& most prominent NGO , Indian Cancer Society ( ICS) under its survivorship programme. ICS has been involved in the crusade against cancer for more than 68 years and is recognized by the
+           Indian Government as the premier Non Profit Organisation for cancer in the country.
+        </p>
+        <br>
+        
+        <!-- Stats card -->
+        
+
+          
+
+          
+        </div>
+      </div>
+    </div>
+
+     <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br>
+              Jerbai Wadia Road, <br>
+              Bhoiwada, Parel, <br>
+              Mumbai – 400012 (India) <br>
+              +91-22-2413 9445 / 51 <br>
+              info@indiancancersociety.org 
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+       <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <!-- Load Bootstrap JS (only once, and INSIDE body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

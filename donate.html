@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Indian Cancer Society — Donate</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Zain font -->
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <style>
+      :root {
+        --purple: #5a0f7c; /* primary purple */
+        --purple-dark: #4b0b63;
+        --orange1: #ffaf66; /* hero/orange tone */
+        --orange2: #d67b2b; /* button / accents */
+        --bg: #fff7f0;
+        --card-shadow: 0 12px 30px rgba(88, 27, 115, 0.12);
+        --rounded: 22px;
+      }
+
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* ========================= NEW NAVBAR STYLES ========================= */
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 25px;
+      }
+
+      /* LOGO overlapping both navbars */
+      .double-logo {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+        z-index: 9999;
+        height: 165px;
+      }
+
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      .helpline-text {
+        position: relative;
+        top: 4 px;
+        left: 240px;
+        font-size: 1 rem;
+      }
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      @media (max-width: 300px) {
+        .ics-logo {
+          height: 100px;
+        }
+      }
+      /* HERO */
+      .hero {
+        position: relative;
+        height: 520px;
+        background-image: linear-gradient(
+            180deg,
+            rgba(90, 15, 124, 0.45),
+            rgba(0, 0, 0, 0.45)
+          ),
+          url("thequint-fit_2021-08_45b856b5-3653-4557-88fc-c07f385ff1cc_iStock_1175131167.jpg");
+        background-size: cover;
+        text-shadow: #333;
+        background-position: center;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        color: #fff;
+      }
+      .hero .hero-left {
+        width: 65%;
+      }
+      .hero h1 {
+        font-size: 40px;
+        line-height: 1.02;
+        font-weight: 700;
+        margin: 0 0 18px 0;
+        text-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      }
+      .cta-btn {
+        background: rgba(255, 255, 255, 0.12);
+        color: #fff;
+        padding: 10px 18px;
+        border-radius: 30px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        font-weight: 700;
+      }
+      .hero .credit {
+        font-size: 0.95rem;
+        opacity: 0.9;
+        position: absolute;
+        right: 28px;
+        bottom: 18px;
+      }
+
+      /* Layout main */
+      .site-wrap {
+        max-width: 1180px;
+        margin: 36px auto;
+        padding: 0 20px;
+      }
+
+      .two-col {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+      }
+
+      /* left column content */
+      .left-col {
+        flex: 1;
+      }
+      h2.section-title {
+        color: var(--purple);
+        font-size: 15px;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+      p.lead {
+        color: #463d3d;
+        line-height: 1.6;
+      }
+
+      /* right donation card */
+      .donate-card {
+        width: 400px;
+        background: var(--purple);
+        color: #fff;
+        padding: 28px;
+        border-radius: 30px;
+        box-shadow: var(--card-shadow);
+        flex-shrink: 0;
+      }
+      .donate-card h3 {
+        font-size: 22px;
+        margin-bottom: 12px;
+        font-weight: 700;
+      }
+      .donate-actions {
+        display: flex;
+        gap: 12px;
+        margin: 14px 0;
+      }
+      .donate-actions .btn {
+        flex: 1;
+        border-radius: 12px;
+        padding: 10px 12px;
+        font-weight: 700;
+      }
+      .donate-card .form-select,
+      .donate-card .form-control {
+        border-radius: 10px;
+        padding: 10px 12px;
+        border: 0;
+      }
+      .amount-grid {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 12px 0;
+      }
+      .amount-grid .amt {
+        flex: 1 1 45%;
+        background: #fff;
+        color: var(--purple);
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .donate-card .other-amt {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 12px;
+      }
+      .donate-cta {
+        margin-top: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .donate-cta .btn-primary {
+        background: #fff;
+        color: var(--purple);
+        border-radius: 12px;
+        padding: 10px 18px;
+        font-weight: 700;
+        border: 0;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      /* rounded field card further down */
+      .form-card {
+        background: var(--purple);
+        color: #fff;
+        padding: 22px;
+        border-radius: 26px;
+        box-shadow: var(--card-shadow);
+        margin-top: 28px;
+      }
+      .form-row .form-label {
+        font-size: 13px;
+        color: #f5eaff;
+        font-weight: 600;
+      }
+
+      /* How you can donate / Please Note list */
+      .info-list li {
+        margin-bottom: 8px;
+        color: #444;
+        line-height: 1.6;
+      }
+
+      /* FAQ accordion */
+      .faq .accordion-button {
+        background: var(--purple);
+        color: #fff;
+        border-radius: 14px;
+        margin-bottom: 12px;
+        padding: 18px;
+        box-shadow: var(--card-shadow);
+        font-weight: 700;
+      }
+      .faq .accordion-body {
+        background: linear-gradient(180deg, #fff, #fff);
+        color: #333;
+        border-radius: 12px;
+        margin-bottom: 18px;
+      }
+
+      /* page footer */
+
+      .double-logo {
+        position: absolute;
+        left: 50px; /* move horizontally */
+        top: 20px; /* adjust how much it overlaps */
+        z-index: 9999; /* stays on top of both navbars */
+        height: 100px; /* adjust size */
+      }
+      /* responsiveness */
+      @media (max-width: 991px) {
+        .hero {
+          height: 300px;
+          padding: 22px;
+        }
+        .hero h1 {
+          font-size: 32px;
+        }
+        .two-col {
+          flex-direction: column;
+        }
+        .donate-card {
+          width: 100%;
+        }
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================= SECOND NAVBAR ========================= -->
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1>Support a good cause and earn tax benefits</h1>
+        <div class="d-flex gap-3"></div>
+      </div>
+      <div class="credit">Priyanka, Cancer survivor</div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="site-wrap">
+      <div class="two-col">
+        <!-- LEFT COLUMN -->
+        <div class="left-col">
+          <h3 class="section-title">Why Us?</h3>
+          <div class="mb-3">
+            <p class="lead">
+              We at the Indian Cancer Society are one of the oldest Cancer NGOs
+              in India. Our work encompasses the entire Cancer spectrum from
+              Cancer awareness, early detection, diagnosis and treatment
+              funding, post-treatment support, and rehabilitation. Our main
+              focus is the underprivileged section of the society both in urban
+              and rural India.
+            </p>
+            <p class="lead">
+              Your one decision to donate to an NGO can save many lives. Thank
+              you for choosing to donate to the Indian Cancer Society. Your
+              contribution is valuable to us.
+            </p>
+          </div>
+
+          <h3 class="section-title">Who we are</h3>
+          <p class="lead">
+            The Indian Cancer Society (ICS), founded in 1951, is India’s first
+            and oldest non-profit dedicated to comprehensive cancer care. We
+            work across the entire cancer journey — from awareness and early
+            detection to treatment support, rehabilitation, and survivorship.
+            Our goal is to make quality cancer care accessible to every
+            individual, especially those from underserved and low-income
+            communities, through reliable information, financial aid, and
+            compassionate support.
+          </p>
+
+          <h3 class="section-title">Our Impact</h3>
+          <p class="lead">
+            ICS conducts large-scale awareness initiatives and screening camps
+            that help detect cancer early, saving thousands of lives every year.
+            We offer financial assistance for treatment, rehabilitation
+            services, and emotional support to help patients rebuild their
+            lives. Our cancer registries and data-led programs strengthen
+            research, improve care outcomes, and guide national health policies.
+            Through our continuous efforts, we reach communities across India
+            and make cancer prevention and treatment more accessible.
+          </p>
+
+          <h3 class="section-title">How You Can Donate</h3>
+          <ul class="info-list">
+            <li>Online through Credit/Debit cards/ Net banking / UPI</li>
+            <li>
+              Donate by cheque/ DD. Upload details online for 80G receipt.
+            </li>
+            <li>Scan and Pay through any app accepting Bharat QRCode</li>
+            <li>Donate through Bank Transfer (IMPS / NEFT / RTGS)</li>
+          </ul>
+
+          <h3 class="section-title">Please Note</h3>
+          <ul class="info-list">
+            <li>
+              Any foreign/Indian residing outside India wants to pay in foreign
+              currency, kindly contact pramila@indiancancersociety.org or 
+              info@indiancancersociety.org All Indian donations shall be
+              exempted from Income tax under 80G of Income Tax Act 1961 as
+              applicable.
+            </li>
+          </ul>
+
+          <!-- FAQ -->
+          <div class="faq mt-4">
+            <h3 class="section-title">FAQ's</h3>
+            <div class="accordion" id="faqAcc">
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q1">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c1"
+                    aria-expanded="false"
+                    aria-controls="c1"
+                  >
+                    What is Cancer Registry and Statistics Research Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c1"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      This fund supports collecting, tracking, and analysing
+                      cancer cases to understand patterns, improve treatment
+                      planning, and guide national cancer control programs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q2">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c2"
+                    aria-expanded="false"
+                    aria-controls="c2"
+                  >
+                    What is General Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c2"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      This fund supports collecting, tracking, and analysing
+                      cancer cases to understand patterns, improve treatment
+                      planning, and guide national cancer control programs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q3">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c3"
+                    aria-expanded="false"
+                    aria-controls="c3"
+                  >
+                    What is Corpus Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c3"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      A permanent fund where only the interest earned is used.
+                      It helps ICS run long-term programs sustainably.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q4">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c4"
+                    aria-expanded="false"
+                    aria-controls="c4"
+                  >
+                    What is Gift Wholesome Nutritious Meals to an
+                    underprivileged cancer patient fund?
+                  </button>
+                </h2>
+                <div
+                  id="c4"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      This fund provides cancer patients with daily nutritious
+                      meals that support recovery during treatment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q5">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c5"
+                    aria-expanded="false"
+                    aria-controls="c5"
+                  >
+                    What is Sponsor Childhood Cancer Survivors for the
+                    School/College education Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c5"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      This fund helps childhood cancer survivors continue their
+                      education by covering school or college fees and related
+                      expenses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q6">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c6"
+                    aria-expanded="false"
+                    aria-controls="c6"
+                  >
+                    What is Help save precious lives Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c6"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      A treatment-assistance fund that supports underprivileged
+                      patients who cannot afford cancer treatment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-2">
+                <h2 class="accordion-header" id="q7">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#c7"
+                    aria-expanded="false"
+                    aria-controls="c7"
+                  >
+                    What is Cancer Prevention Program Fund?
+                  </button>
+                </h2>
+                <div
+                  id="c7"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#faqAcc"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      This fund supports awareness drives, screening camps,
+                      counselling, and lifestyle education to prevent cancer and
+                      enable early detection
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (donation card + form) -->
+        <aside style="width: 400px">
+          <div class="donate-card">
+            <h3>Donate and save tax</h3>
+
+            <div class="d-flex gap-2 mt-2">
+              <button class="btn btn-light btn-sm">Give once</button>
+              <button class="btn btn-outline-light btn-sm">Give monthly</button>
+            </div>
+
+            <label
+              class="form-label mt-3"
+              style="color: #ffeaff; font-weight: 600"
+              >Choose a fund to donate in</label
+            >
+            <select class="form-select mt-1">
+              <option>Cancer treatment fund</option>
+              <option>General fund</option>
+              <option>Screening fund</option>
+            </select>
+
+            <div class="amount-grid mt-3">
+              <div class="amt">1000rs</div>
+              <div class="amt">5000rs</div>
+              <div class="amt">10000rs</div>
+              <div class="amt">15000rs</div>
+            </div>
+
+            <div class="other-amt">
+              <div style="flex: 1">
+                <input class="form-control" placeholder="Other Amount" />
+              </div>
+              <div
+                style="
+                  width: 52px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <button class="btn btn-light btn-sm" title="gift a donation">
+                  🎁
+                </button>
+              </div>
+            </div>
+
+            <div class="donate-cta">
+              <button class="btn btn-primary">Donate Now</button>
+              <small style="opacity: 0.85"
+                >Help patients access timely treatment</small
+              >
+            </div>
+
+            <!-- small info -->
+            <p style="font-size: 12px; opacity: 0.9; margin-top: 12px">
+              Help patients access timely treatment, stay informed, and receive
+              care in a supportive environment.
+            </p>
+          </div>
+
+          <!-- long form card -->
+          <div class="form-card">
+            <div class="row g-2">
+              <div class="col-12">
+                <label class="form-label form-label">Full name*</label>
+                <input class="form-control" placeholder="Full name" />
+              </div>
+
+              <div class="col-6">
+                <label class="form-label">Date of Birth</label>
+                <input class="form-control" type="date" />
+              </div>
+
+              <div class="col-6">
+                <label class="form-label">Mobile Number*</label>
+                <input class="form-control" placeholder="Mobile number" />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Email*</label>
+                <input class="form-control" placeholder="Email" />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Address</label>
+                <input class="form-control" placeholder="Address" />
+              </div>
+
+              <div class="col-6">
+                <label class="form-label">Pincode</label>
+                <input class="form-control" placeholder="Pincode" />
+              </div>
+              <div class="col-6">
+                <label class="form-label">City</label>
+                <input class="form-control" placeholder="City" />
+              </div>
+
+              <div class="col-6">
+                <label class="form-label">State</label>
+                <input class="form-control" placeholder="State" />
+              </div>
+              <div class="col-6">
+                <label class="form-label">Country</label>
+                <input class="form-control" placeholder="Country" />
+              </div>
+
+              <div class="col-12 d-flex align-items-center gap-2 mt-2">
+                <input type="checkbox" id="gift" />
+                <label for="gift" style="margin: 0">I gift a donation</label>
+              </div>
+
+              <div class="col-12 mt-2">
+                <button
+                  class="btn btn-light w-100"
+                  style="color: var(--purple); font-weight: 700"
+                >
+                  Donate Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br />
+              Jerbai Wadia Road, <br />
+              Bhoiwada, Parel, <br />
+              Mumbai – 400012 (India) <br />
+              +91-22-2413 9445 / 51 <br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <!-- Bootstrap bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+  <!-- <img src="icslogo.png" class="double-logo" alt="ICS Logo"> -->
+</html>

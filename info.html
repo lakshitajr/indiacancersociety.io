@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Indian Cancer Society — Cancer Information</title>
+
+    <!-- Font -->
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --ics-purple: #5a0f7c;
+        --ics-orange: #ff7b00;
+        --ics-orange-soft: #ffa24d;
+        --ics-peach: #eed4d9;
+        --max-width: 1200px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Zain", sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        color: #222;
+        background: #fff;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* ---------------- NAVBARS ---------------- */
+      .top-nav {
+        background: linear-gradient(
+          90deg,
+          var(--ics-purple),
+          var(--ics-orange)
+        );
+      }
+      /* .top-nav .navbar-brand img { height:75px; } */
+
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      /* ---------------- HERO ---------------- */
+      /* .hero {
+      position: relative;
+      width: 100vw;
+      height: 60vh;
+      background-position: center;
+      background-size: cover;
+      background-image:
+      linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.4)
+          ),url("info.jpg");
+      margin-left: calc(50% - 50vw);
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+     
+    } */
+      .hero {
+        width: 100%;
+        height: 650px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("collab.png");
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+
+      .hero-overlay {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2.5rem 1.2rem;
+        color: #ffffff;
+      }
+      .hero-title {
+        font-size: 5rem;
+        font-weight: 900;
+        letter-spacing: 0.02rem;
+        text-transform: uppercase;
+        line-height: 0.9;
+
+        text-shadow: 0px 10px 60px rgba(0, 0, 0, 1);
+      }
+
+      /* white gap */
+      .white-gap {
+        height: 24px;
+        background: #fff;
+      }
+
+      /* content wrapper */
+      .section {
+        max-width: var(--max-width);
+        margin: 0 auto;
+        padding: 2.4rem 1.2rem;
+      }
+
+      /*  purple wash */
+      .top-wash {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(90, 15, 124, 0.08) 12%,
+          rgba(90, 15, 124, 0.2) 34%,
+          rgba(255, 255, 255, 1) 100%
+        );
+      }
+
+      h2.section-head {
+        color: var(--ics-purple);
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+      p.lead {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      /* two-column */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 380px;
+        gap: 2rem;
+        align-items: start; /* top-align both columns */
+      }
+      @media (max-width: 900px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+      }
+      .hero-text {
+        font-size: 100px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+      }
+      /* large purple rounded box */
+      .purple-full {
+        background: var(--ics-purple);
+        color: #fff;
+        border-radius: 22px;
+        padding: 1.8rem;
+        box-shadow: 0 12px 30px rgba(90, 15, 124, 0.08);
+        margin-top: 1.6rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+      }
+      .purple-full h5 {
+        margin: 0 0 0.8rem 0;
+        font-weight: 700;
+      }
+      .purple-full ul {
+        column-count: 3;
+        column-gap: 1.5rem;
+        padding-left: 1rem;
+        margin: 0;
+      }
+      @media (max-width: 900px) {
+        .purple-full ul {
+          column-count: 1;
+        }
+      }
+
+      /* Danger signals */
+      .danger-title {
+        text-align: center;
+        color: var(--ics-purple);
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin: 2.2rem 0 1rem 0;
+      }
+      .danger-list {
+        line-height: 1.6;
+        color: #222;
+      }
+
+      /* orange footer */
+      .orange-band {
+        background: linear-gradient(
+          360deg,
+          #fbc197 0%,
+          #ffa24d8c 35%,
+          #ffa24d2e 65%,
+          #ffa24d00 100%
+        );
+        padding: 4.5rem 0; /* taller */
+        margin-top: 2rem;
+      }
+
+      /* FOOTER */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      .double-logo {
+        position: absolute;
+        left: 50px; /* move horizontally */
+        top: 20px; /* adjust how much it overlaps */
+        z-index: 9999; /* stays on top of both navbars */
+        height: 100px; /* adjust size */
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <!-- <section class="hero">
+    <img src="info.jpg" class="hero-bg" alt="Cancer information hero">
+    <div class="hero-overlay">
+      <div class="hero-title">CANCER<br> INFORMATION</div>
+    </div>
+  </section> -->
+    <div class="hero">
+      <div style="margin-left: 200px" class="hero-text">CANCER INFORMATION</div>
+    </div>
+
+    <div class="white-gap"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="top-wash">
+      <section class="section">
+        <div class="two-col">
+          <!-- LEFT: WHAT IS CANCER? -->
+          <div class="no-paper">
+            <h2 class="section-head">What is cancer?</h2>
+
+            <p class="fs-5">
+              In simple terms, cancer is an abnormal growth of body cells. Each
+              one of us is born with a potential for cancer. One cannot "Catch"
+              it as one would an infection or a cold. When the programming of a
+              cell or a group of cells is affected, growth may become
+              uncontrolled. Some of the factors that can alter the code are
+              chronic irritation, tobacco, smoke and dust, radioactive
+              substances, age, sex, race and heredity. While one cannot control
+              many of these factors , we need to be aware of the ones we can
+              control of. Prevention is definitely better than treatment of
+              cancer. No one yet talks of cure, treatment: What is the
+              difference between normal and malignant cells? Normal cells grow
+              in a well regulated pattern. When cancer sets in, a group of cells
+              suddenly starts multiplying in a haphazard and uncontrolled way,
+              forming lumps or tumors. a malignant tumor never stops.<br />
+            </p>
+
+            <p class="fs-5">
+              What is the difference between normal and malignant cells? Normal
+              cells grow in a well regulated pattern. When cancer sets in, a
+              group of cells suddenly starts multiplying in a haphazard and
+              uncontrolled way, forming lumps or tumours. A malignant tumour
+              never stops growing and can spread to other parts of the body.
+            </p>
+
+            <!--  purple list box -->
+            <div
+              class="purple-full"
+              role="region"
+              aria-label="List of cancers"
+              style="align-self: center"
+            >
+              <h5>
+                Patient eligibility crit — Broadly, there are 19 cancers that
+                can be generally related to life style.
+              </h5>
+              <ul class="fs-5">
+                <li>Breast Cancer</li>
+                <li>Cervical Cancer</li>
+                <li>Oral Cancers</li>
+                <li>Cancer of the Bladder</li>
+                <li>Cancer in the Eyes</li>
+                <li>Cancer of the Pancreas</li>
+                <li>Colorectal Cancer</li>
+                <li>Esophageal Cancer</li>
+                <li>Kidney Cancer</li>
+                <li>Laryngeal Cancers</li>
+                <li>Liver Cancers</li>
+                <li>Lung Cancers</li>
+                <li>Ovarian Cancers</li>
+                <li>Prostrate Cancer</li>
+                <li>Skin Cancers</li>
+                <li>Stomach Cancer</li>
+                <li>Testicular Cancer</li>
+                <li>Thyroid Cancers</li>
+                <li>Uterine Cancer</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- doctor image -->
+          <aside class="no-paper">
+            <img src="info2.png" alt="Doctor and patient" class="doctor-img" />
+          </aside>
+        </div>
+        <!-- end two-col -->
+
+        <!-- Danger signals -->
+        <div>
+          <h3 class="danger-title">Danger Signals</h3>
+
+          <div class="danger-list">
+            <ul class="fs-5">
+              <li>
+                A persistent sore especially if it is in the mouth, on the lip
+                or on tongue. Long standing sores due to smoking, sharp edge of
+                teeth, or dental plates that do not fit, can develop into cancer
+                if not taken care of. Common 'Cold Sore' disappears after a few
+                days - Cancer does not. If any such sore persists more than a
+                few days, see your doctor.
+              </li>
+              <li>
+                Lumps or masses which appear where none were present previously
+                should arouse suspicion of cancer. This is especially true in
+                the case of women and is the most readily cured if treated
+                early.
+              </li>
+              <li>
+                Persistent indigestion or change in bowel habits, while usually
+                due to other causes, are often caused in the intestinal tract
+                and should be reported.
+              </li>
+              <li>
+                Unexplained or abnormal bleeding from anybody opening should be
+                quickly investigated by a physician. Coughing up or vomiting
+                blood, passing blood in the urine and rectal bleeding are common
+                symptoms of cancer. In women the first sign of cancer of the
+                uterus is often a bloody discharge occurring between menstrual
+                periods or after menopause..
+              </li>
+              <li>
+                Persistent hoarseness or cough of abnormal duration deserves a
+                careful examination by your doctor. Cancer of the larynx (voice
+                box) or respiratory passages or lung may be the cause.
+              </li>
+              <li>
+                Unexplained loss of weight may be due to many things but may
+                also be due to hidden cancer.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- orange gradient band  -->
+    <div class="orange-band">
+      <section class="section" style="padding-top: 1rem">
+        <p
+          style="margin: 0; color: #fff; text-align: center; font-weight: 700"
+        ></p>
+      </section>
+    </div>
+
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br />
+              Jerbai Wadia Road, <br />
+              Bhoiwada, Parel, <br />
+              Mumbai – 400012 (India) <br />
+              +91-22-2413 9445 / 51 <br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <!-- Load Bootstrap JS (only once, and INSIDE body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

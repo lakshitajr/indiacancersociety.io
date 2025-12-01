@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cancer Awareness – Indian Cancer Society</title>
+
+<!-- ZAIN FONT -->
+<link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+<style>
+     
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 25px;
+      }
+
+      /* LOGO overlapping both navbars */
+      .double-logo {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+        z-index: 9999;
+        height: 100px;
+      }
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+      .helpline-text {
+        position: relative;
+        top: 4 px;
+        left: 240px;
+        font-size: 1 rem;
+      }
+
+      
+
+      @media (max-width: 300px) {
+        .ics-logo {
+          height: 100px;
+        }
+      }
+
+      /* FOOTER */
+      .ics-footer {
+        background: #5a0f7c;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer p,
+      .ics-footer li,
+      .ics-footer {
+        color: white !important;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+
+      .ics-footer a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgb(255, 255, 255);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+    /* ---------------- MAIN PAGE STYLING (unchanged from perfect version) ---------------- */
+
+    .hero {
+        width: 100%;
+        height: 550px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("aware.jpg");
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        box-sizing: border-box;
+    }
+
+    .hero-text {
+        font-size:100px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+    }
+
+    .section {
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    h1 { color: #5a0f7c; font-weight: 700; font-size: 32px; }
+    h2 { color: white; font-weight: 700; font-size: 26px; }
+    h3 { font-size: 22px; font-weight: 700; }
+
+    .two-col { display: flex; gap: 25px; margin-top: 25px; }
+    .col {
+        flex: 1;
+        background: #5a0f7c;
+        padding: 25px;
+        border-radius: 18px;
+        color: white;
+    }
+    .col.white { background: white; color: #333; }
+
+    .box-flex, .small-card-flex {
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        padding: 25px;
+        border-radius: 18px;
+        color: white;
+        margin-top: 25px;
+    }
+    .box-flex { background: #5a0f7c; }
+    .small-card-flex { background: #d67b2b; }
+
+    .img-left {
+        width: 150px;
+        height: 160px;
+        background: rgba(255,255,255,0.35);
+        border-radius: 12px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .text-right { flex: 1; color: white; }
+
+    .two-small { display: flex; gap: 25px; margin-top: 25px; }
+
+    .month-box {
+        background: #5a0f7c;
+        padding: 25px;
+        border-radius: 18px;
+        color: white;
+        margin-top: 35px;
+    }
+
+    .months-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 20px;
+    }
+
+    .month {
+        padding: 15px;
+        border: 2px solid white;
+        border-radius: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    /* ---------------- FOOTER (YOUR CODE) ---------------- */
+
+    .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+    }
+    .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    .ics-footer a { color: #ffb36b; text-decoration: none; }
+    .ics-footer a:hover { color: white; }
+
+    .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+    }
+    .social-icons a:hover { color: #ffb36b; }
+
+    .footer-bottom {
+        border-top: 1px solid rgb(255, 255, 255);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+    }
+</style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+   <!-- ========================= TOP NAVBAR ========================= -->
+      <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a  class="nav-link fs-5" href="aboutus.html">About us</a></li>
+            <li class="nav-item">
+              <a  class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fs-5" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item fs-5" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item fs-5" href="collab.html">Collaborate</a></li>
+                <li><a class="dropdown-item fs-5" href="partners.html">Our Partners</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item "><a class="nav-link fs-5" href="events.html">Whats new</a></li>
+            <li class="nav-item"><a class="nav-link fs-5" href="careers.html">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <a href="index.html"> <img src="icslogo.png" class="double-logo" alt="ICS Logo"> </a>  
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul style="background-color: #ffffff; font-weight: -200px;" class="dropdown-menu">
+                <li><a  class="dropdown-item fs-5" href="screening.html">Screening</a></li>
+                <li><a class="dropdown-item fs-5" href="cancercure.html">Cancer Cure</a></li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html">Survivorship & Rehab</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html">UGAM Support Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+<!-- ========================= PAGE CONTENT STARTS ========================= -->
+
+<div class="hero">
+    <div class="hero-text">CANCER AWARENESS</div>
+</div>
+
+<div class="section">
+    <h1>Why Awareness is Important?</h1> 
+
+    <div class="two-col">
+        <div class="col white fs-4">
+            <p>In India, the incidence of cancer is increasing rapidly; therefore it is important to step up cancer literacy and knowledge amongst the population.
+We hope that this will lead to early detection which is important in the management and treatment of cancer and also prevention by making necessary changes in lifestyle. Leading an active life, combined with healthy food habits is essential to good health.</p>
+           
+        </div>
+
+        <div style="margin-top: -60px;" class="col fs-5">
+            <p><br>Breast Cancer</br> is rapidly rising amongst women in urban areas and it is the most common cancer in India. Early detection is essential in its management and treatment. Due to ignorance, fear, and social stigma many women present with stage III or IV cancer which requires surgery and extensive treatment. If detected early, then in most cases there will be less aggressive treatment and better chances of recovery.</p>
+            <p><br>Cervical Cancer</br>  is the second most common cancer among women in India. It is the only preventable cancer and it can be detected in the pre - cancerous phase and cured.</p>
+            <p><br>Oral & Lung Cancer</br> are highest among men and women in the urban as well as rural population and these can also be prevented to a large extent. Therefore, making people aware of the dangers of chewing tobacco and smoking is of great importance.</p>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div style="margin-left: -80px;margin-right: -80px;margin-top: -80px;" class="box-flex">
+        <div class="text-right">
+            <h2>Objectives of the Cancer Awareness Program</h2>
+            <ul>
+                <li class="fs-5">Create cancer awareness and remove the stigma and fear attached.</li>
+                <li class="fs-5">Help people recognize the early signs and symptoms of cancer, thus enabling them to seek treatment at an early stage.</li>
+                <li class="fs-5">Educate people about the key risk factors, since more than 30% of cancer cases could be prevented by modifying lifestyle or avoiding the risk factors.</li>
+                <li class="fs-5">Inform people about the importance of regular screening and check-ups.</li>
+                <li class="fs-5">Inform women about Pap smear tests to check for signs of cervical cancer</li>
+                 <li class="fs-5">The primary goal of ICS is to promote and develop awareness in the public and emphasize the importance of early detection, all of which play a major role in the treatment of cancer. Cancer awareness can also lead to people making healthier lifestyle choices.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+
+    <div style="margin: -70px;" class="box-flex ">
+        <img style="width: fit-content;" src="Screenshot 2025-11-26 at 10.15.15 PM.png"  class="img-left mt-5">
+        <div class="text-right">
+            <h2>Cancer Awareness Campaign 2019</h2>
+            <p class="fs-4">The aim of the campaign is to create cancer awareness amongst the population of India. It is important to dispel the myths that people wrongly believe, inform them about the signs and symptoms, and importance of screening for early detection. It is also vital to follow a healthy lifestyle, and sharing of survivor stories gives a message of hope and confidence.
+The campaign is called "Raho cancer se do kadam aage" - the objective being, that if you are aware of all these factors you can stay two steps ahead of cancer. Indian Cancer Society has collaborated with Dainik Bhaskar Group of newspapers for this campaign. The editions are published in Hindi, Marathi & Gujarati in Bihar, Jharkhand, Madhya Pradesh, Uttar Pradesh, Rajasthan, Gujarat and Maharashtra which reach 62 lakh households.</p>
+        </div>
+    </div>
+
+    <div style="margin-top:120px ;" class="two-small">
+        <div class="small-card-flex">
+           <img src="Screenshot 2025-11-26 at 11.26.25 PM.png" class="img-left">
+            <div class="text-right">
+                <h3>World Cancer Day</h3>
+                <p class="fs-4">Educates people on early signs, lifestyle, screening.</p>
+            </div>
+        </div>
+
+        <div style="margin-top:30px ;" class="small-card-flex">
+       <img src="Screenshot 2025-11-26 at 11.26.25 PM.png" class="img-left">
+            <div class="text-right">
+                <h3 class="fs-2">Healthy Lifestyle</h3>
+                <ul>
+                    <li class="fs-4">No tobacco</li>
+                    <li class="fs-4">Limit alcohol</li>
+                    <li class="fs-4">Eat greens</li>
+                    <li class="fs-4">Maintain weight</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-card-flex">
+       <img src="Screenshot 2025-11-26 at 11.26.25 PM.png" class="img-left">
+        <div style="margin-top: -10px;padding-left: 20px;margin-bottom: -20px;" class="text-right">
+            <h3>Screening</h3>
+            <ul>
+                <li>Breast: mammogram</li>
+                <li>Oral: tobacco related</li>
+                <li>Cervical: Pap smear</li>
+                <li>Colorectal: tests</li>
+                <li>Prostate: screening</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="two-small">
+        <div  class="small-card-flex">
+       <img src="Screenshot 2025-11-26 at 11.26.25 PM.png" class="img-left">
+            <div  style=" padding-top: 20px;margin-top: -13px;" class="text-right">
+                <h3 >Signs & Symptoms</h3>
+                <ul>
+                    <li>Patches</li>
+                    <li>Lumps</li>
+                    <li>Mole change</li>
+                    <li>Hoarseness</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: -2px;" class="small-card-flex">
+           <img src="Screenshot 2025-11-26 at 11.26.25 PM.png" class="img-left">
+            <div style="margin-top:30px ;padding-right: 220px;" class="text-right">
+                <h3>Myths</h3>
+                <ul>
+                    <li>Karma ≠ cancer</li>
+                    <li>Not contagious</li>
+                    <li>Hair dye doesn’t cause cancer</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section">
+    <div class="two-col">
+        <div class="col white me-5" style="text-align:center;">
+            <img src="Screenshot 2025-11-26 at 11.42.28 PM.png" style="width:120%; border-radius:10px;">
+        </div>
+<br> <br><br>
+        <div class="col month-box">
+            <h2>I CAN – Rise Against Cancer</h2>
+
+            <div class="months-grid">
+                <div class="month">JANUARY<br>Mumbai Marathon</div>
+                <div class="month">FEB<br>World Cancer Day</div>
+                <div class="month">FEB<br>Race of Hope</div>
+                <div class="month">MAY 1<br>No Tobacco Day</div>
+                <div class="month">SEPT<br>Cancer Awareness</div>
+                <div class="month">OCT<br>Breast Cancer</div>
+            </div>
+
+            <p style="margin-top:20px;">Year-round talks in schools, colleges, corporates, prisons, govt institutions.</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- ========================= FOOTER ========================= -->
+
+<footer class="ics-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 mb-4 text-white">
+                <div class="footer-title">Indian Cancer Society</div>
+                <p>
+                    74, Jerbai Wadia Road,<br>
+                    Bhoiwada, Parel,<br>
+                    Mumbai – 400012<br>
+                    +91-22-2413 9445 / 51<br>
+                    info@indiancancersociety.org
+                </p>
+            </div>
+ <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="footer-title">Connect With Us</div>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            ©️ 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
+

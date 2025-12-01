@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Collaborate — Indian Cancer Society</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Zain font -->
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <style>
+      :root {
+        --ics-purple: #5a0f7c;
+        --ics-orange: #ff7b00;
+        --ics-peach: #eed4d9;
+        --page-max: 1150px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: "Zain", sans-serif;
+        background: #fff;
+        color: #111;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ========== Top Navbar ========== */
+      .ics-gradient {
+        background: linear-gradient(
+          to right,
+          var(--ics-purple),
+          var(--ics-orange)
+        );
+        color: white;
+      }
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+      /* ----
+    /* ========== Hero ========== */
+      .hero {
+        position: relative;
+        height: 460px;
+        overflow: hidden;
+      }
+      .hero .hero-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(0.95);
+      }
+      /* purple fade */
+      .hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 120px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(90, 15, 124, 0.25) 30%,
+          rgba(90, 15, 124, 0.6) 100%
+        );
+        pointer-events: none;
+      }
+      .hero {
+        width: 100%;
+        height: 650px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("collab.png");
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+
+      .hero-text {
+        font-size: 100px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+      }
+      /* center content wrapper */
+      .page-wrap {
+        max-width: var(--page-max);
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+
+      /* ========== Title & lead area ========== */
+      .title-row {
+        display: flex;
+        gap: 28px;
+        align-items: flex-start;
+        margin-top: 8px;
+      }
+      .page-title {
+        color: var(--ics-purple);
+        font-size: 42px;
+        font-weight: 800;
+        margin: 0 0 12px 0;
+      }
+      .lead-block {
+        color: #333;
+        font-size: 15px;
+        line-height: 1.68;
+      }
+
+      /* Right image card */
+      .media-right {
+        width: 360px;
+        max-width: 36%;
+        min-width: 260px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      .media-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ========== Two-column section ========== */
+      .lower-grid {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 28px;
+        align-items: start;
+        margin-top: 26px;
+      }
+      .lower-left p {
+        margin-bottom: 16px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: #222;
+      }
+
+      /* thumbnail + text area */
+      .thumb-block {
+        display: flex;
+        gap: 18px;
+        align-items: flex-start;
+        margin-top: 18px;
+      }
+      .thumb {
+        width: 420px;
+        max-width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* purple rounded callout */
+      .callout {
+        background: var(--ics-purple);
+        color: #fff;
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: 0 8px 22px rgba(90, 15, 124, 0.16);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+      .ics-logo {
+        height: 30px;
+      }
+      /* LOGO overlapping both navbars */
+      .double-logo {
+        position: absolute;
+        left: 50px; /* move horizontally */
+        top: 20px; /* adjust how much it overlaps */
+        z-index: 9999; /* stays on top of both navbars */
+        height: 100px; /* adjust size */
+      }
+      /* subtle divider between content and footer */
+      .content-divider {
+        height: 18px;
+      }
+
+      /* ========== Footer band ========== */
+      .footer-band {
+        background: linear-gradient(
+          90deg,
+          var(--ics-purple),
+          var(--ics-orange)
+        );
+        color: #fff;
+        padding: 34px 0 18px;
+        margin-top: 36px;
+      }
+      .footer-inner {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 0 18px;
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .logo-col img {
+        height: 78px;
+        display: block;
+      }
+      .footer-links {
+        display: flex;
+        gap: 32px;
+        flex: 1;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .footer-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 13px;
+      }
+      .footer-right {
+        text-align: right;
+        min-width: 220px;
+      }
+
+      /* responsive tweaks */
+      @media (max-width: 1100px) {
+        .media-right {
+          display: none;
+        }
+        .lower-grid {
+          grid-template-columns: 1fr;
+        }
+        .title-row {
+          flex-direction: column;
+          gap: 14px;
+        }
+        .thumb {
+          width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        .hero {
+          height: 320px;
+        }
+        .page-title {
+          font-size: 30px;
+        }
+        .lead-block {
+          font-size: 14px;
+        }
+        .callout {
+          padding: 16px;
+          font-size: 14px;
+          border-radius: 14px;
+        }
+      }
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      /* FOOTER */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================= HERO ========================= -->
+
+    <div class="hero">
+      <div style="margin-left: 200px" class="hero-text">COLLABORATE</div>
+    </div>
+
+    <!-- ========================= MAIN CONTENT ========================= -->
+    <div class="page-wrap">
+      <!-- Title + right image -->
+      <div class="title-row">
+        <div style="flex: 1">
+          <!-- <h1 class="page-title ">Collaborate</h1> -->
+          <div class="lead-block">
+            <p class="fs-5">
+              Indian Cancer Society has been doing sterling work in the fight
+              against cancer across India. The extent of help required is
+              phenomenal. Most of the patients who come to us from all over the
+              country are from underprivileged sections of society. In such
+              cases, undergoing the expensive treatment is beyond their
+              capacity. Indian Cancer Society is entirely dependent on public
+              support for its various activities concerned with financing the
+              treatment and rehabilitation of cancer patients as well as for
+              spreading cancer awareness and its early detection by screening.
+              Indian Cancer Society cannot work for the cause of cancer without
+              the support of partners and sponsors; therefore we need your help
+              to create a greater impact and to reach people across the country.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="media-right">
+            <img src="collab2.png" alt="collab image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- lower grid: text left + callout right -->
+      <div class="lower-grid">
+        <div class="lower-left">
+          <p class="fs-5">
+            We have a wide range of events and initiatives that you could
+            sponsor, enhancing your brand profile while helping us to raise
+            requisite funds. Sponsorships are a great way to support us while
+            developing deeper connections with the target audiences, motivating
+            your employees, achieving your corporate social responsibility and
+            also your marketing objectives. Our sponsorship opportunities range
+            from awareness to screening to our cancer cure fund and survivorship
+            and rehabilitation of cancer survivors. Registry, education and
+            research is yet another area for sponsorship support.
+          </p>
+
+          <div class="thumb-block">
+            <div class="thumb">
+              <img src="collab3.png" alt="thumbnail" />
+            </div>
+            <div style="flex: 1; padding-top: 107px">
+              <p style="margin: 0 0 8px 0; font-weight: 700" class="fs-6">
+                We would be happy to discuss these and any other ideas with you.
+                Join hands with us and let us together rise against cancer!
+              </p>
+              <p style="margin: 0" class="fs-6">
+                For further details contact us at :
+                <a href="mailto:info@indiancancersociety.org"
+                  >info@indiancancersociety.org</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="callout">
+            <strong>BIG FM, one of India's largest radio networks</strong> with
+            RJ Abhilash ran a 5 week association with Indian Cancer Society on
+            his evening show - Mumbai ka sabse badaa struggler. The association
+            was a fund-raiser by RJ Abhilash for childhood cancer patients.<br /><br />
+            This collaboration helped listeners understand more about cancer,
+            various aspects of childhood cancer, early signs & symptoms,
+            importance of screening, myths, cancer treatment and care,
+            survivorship, rehabilitation and mainstreaming of cancer survivors
+            through interviews with ICS trustees and Oncologists. It also helped
+            spread awareness not only through the show but also social
+            media.diagnosed patients.
+          </div>
+        </aside>
+      </div>
+    </div>
+    <!-- /page-wrap -->
+
+    <!-- small spacing -->
+    <div class="content-divider"></div>
+
+    <!-- FOOTER -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br />
+              Jerbai Wadia Road, <br />
+              Bhoiwada, Parel, <br />
+              Mumbai – 400012 (India) <br />
+              +91-22-2413 9445 / 51 <br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <!-- Load Bootstrap JS (only once, and INSIDE body) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

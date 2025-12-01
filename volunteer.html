@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <title>ICS Double Navbar</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      /* LOGO overlapping both navbars */
+.double-logo {
+    position: absolute;
+    left: 50px;         /* move horizontally */
+    top: 20px;          /* adjust how much it overlaps */
+    z-index: 9999;      /* stays on top of both navbars */
+    height: 100px;      /* adjust size */
+}
+
+
+       .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+.subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+.helpline-text {
+    position: relative;
+    top: 10px;     /* move down */
+    left: 240px;    /* move right */
+    font-size: 1.5rem;
+    /* or right: 40px; for pushing it left */
+}
+.hero-section {
+            background: url('volunteerbg.jpg') no-repeat center center;
+            background-size: cover;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+      
+      .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .hero-section h1 {
+            position: relative;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .btn-volunteer {
+            position: relative;
+            margin-top: 20px;
+            border-radius: 40px;
+            font-weight: 130px;
+            padding-left: 50px;
+            padding-right: 60px;
+            background-color: #ff6600;
+            border: none;
+        }
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+ /* Card Section */
+       
+
+        .volunteer-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .volunteer-card h3 {
+            color: #6a1b9a;
+            margin-bottom: 20px;
+        }
+
+        .volunteer-card ul {
+            padding-left: 20px;
+        }
+
+        .volunteer-card a {
+            color: #ff6600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+ .volunteerheading{
+    font-size: 50px;
+ }
+
+        
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+
+    <!-- Social Media Icons (Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body style="background-color: #6a1b9a">
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <!-- ========================= TOP NAVBAR ========================= -->
+      <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a  class="nav-link fs-5" href="aboutus.html">About us</a></li>
+            <li class="nav-item">
+              <a  class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item fs-5" href="donate.html">Donate</a></li>
+                <li><a class="dropdown-item fs-5" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item fs-5" href="collab.html">Collaborate</a></li>
+                <li><a class="dropdown-item fs-5" href="partners.html">Our Partners</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item "><a class="nav-link fs-5" href="events.html">Whats new</a></li>
+            <li class="nav-item"><a class="nav-link fs-5" href="careers.html">Careers</a></li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+ <a href="index.html"> <img src="icslogo.png" class="double-logo" alt="ICS Logo"> </a>  
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul style="background-color: #ffffff; font-weight: -200px;" class="dropdown-menu">
+                <li><a  class="dropdown-item fs-5" href="screening.html">Screening</a></li>
+                <li><a class="dropdown-item fs-5" href="cancercure.html">Cancer Cure</a></li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html">Survivorship & Rehab</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html">UGAM Support Group</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section">
+        <div>
+            <h1 style="font-size: 100px;">VOLUNTEER</h1>
+            <a href="#volunteer-form" class="btn btn-volunteer btn-lg text-white fs-2">VOLUNTEER WITH US</a>
+        </div>
+    </section>
+
+
+    
+</div>
+<section class="volunteer-section container mt-5">
+        <!-- Internship Card -->
+        <div class="volunteer-card">
+            <h3 class="fw-bolder fs-1   ">Internship in Psycho Social Oncology at Indian Cancer Society, Mumbai</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fw-bolder color:#6a1b9a fs-3">Internship Curriculum</h5>
+                    <ul class="fs-5">
+                        <li>Plan and maintain quality of sessions.</li>
+                        <li>Coordinating the workshop/programs organized by ICS internship vertical.</li>
+                        <li>Observing and coordinating monthly support group meetings.</li>
+                        <li>Fun and supportive work environment.</li>
+                        <li>An experiential understanding of social work.</li>
+                    </ul>
+                    <p class="fs-3">Interns are expected to:
+                        <ul class="fs-5">
+                            <li>Give update once in a week.</li>
+                            <li>Report has to be provided after completion of the internship.</li>
+                            <li>Certificate will be provided.</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="fw-bolder fs-3">Eligibility Criteria</h5>
+                    <ul class="fs-5">
+                        <li>Qualification: MSC (Clinical, Counseling or Health/Medical Psychology) final year student</li>
+                        <li>Expertise in counseling</li>
+                        <li>Experience in innovative research design</li>
+                        <li>Fluent in Hindi/Marathi & English</li>
+                        <li>Computer proficiency with MS Office suite</li>
+                        <li>Duration: Minimum 1 Month</li>
+                        <li>Time: Monday to Friday (10 am to 6 pm)</li>
+                        <li>Number of vacancies: 2</li>
+                    </ul>
+                    <h6 class="fs-3 fw-bolder">Required documents:</h6>
+                    <ul class="fs-5">
+                        <li>Bonafide certificate/Recommendation letter from the Institute</li>
+                        <li>Result of the last exam passed</li>
+                        <li>Resume (latest version)</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-3 fs-4">Please send your application to <a href="mailto:chitra@indiancancersociety.org">chitra@indiancancersociety.org</a></p>
+        </div>
+
+        <!-- Research Assistant Card -->
+        <div class="volunteer-card">
+            <h3 class="fw-bolder fs-1">Volunteer as a Research Assistant at Registry and Research</h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="fs-3 fw-bolder">Requirements</h5>
+                    <ul class="fs-5">
+                        <li>Generating research projects based on registry database</li>
+                        <li>Statistical Data Analysis and Interpretation</li>
+                        <li>Preparing drafts for research articles</li>
+                        <li>Qualifications like BSc, BSc. (Nursing) with prior Research experience, SPSS, STATA etc.</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5 class=" fs-3 fw-bolder">Eligibility & Benefits</h5>
+                    <ul class="fs-5 color:#ffb36b">
+                        <li>Qualification: BSc/MSc Statistics, understanding of bio-statistics and confidence to carry out allotted work</li>
+                        <li>Benefits: Exposure to research work and development of analytical skills</li>
+                        <li>Certificate will be provided</li>
+                        <li>Duration: Minimum 2 months</li>
+                        <li>Time: Monday - Friday: 10 am to 6 pm (or mutually considered)</li>
+                        <li>Location: Indian Cancer Society, 74 Jerbai Wadia Road, Bhowaeda, Parel, Mumbai 400012</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="mt-3 fs-4">Please send your application to <a href="mailto:chitra@indiancancersociety.org">chitra@indiancancersociety.org</a></p>
+        </div>
+    </section>
+
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br>
+              Jerbai Wadia Road, <br>
+              Bhoiwada, Parel, <br>
+              Mumbai – 400012 (India) <br>
+              +91-22-2413 9445 / 51 <br>
+              info@indiancancersociety.org 
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+     <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+ 
+
+</html>

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <title>ICS Double Navbar</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      /* LOGO overlapping both navbars */
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      .double-logo {
+        position: absolute;
+        left: 50px; /* move horizontally */
+        top: 20px; /* adjust how much it overlaps */
+        z-index: 9999; /* stays on top of both navbars */
+        height: 100px; /* adjust size */
+      }
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      .hero-section {
+        background: url(".jpg") no-repeat center center;
+        background-size: cover;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: white;
+        text-align: center;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .hero-section h1 {
+        position: relative;
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .btn-volunteer {
+        position: relative;
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: #ff6600;
+        border: none;
+      }
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+      /* Card Section */
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+      .hero {
+        background: linear-gradient(
+            to bottom,
+            rgba(98, 0, 153, 0.4),
+            rgba(255, 126, 95, 0.3)
+          ),
+          url("your-image.jpg") center/cover no-repeat;
+        height: 380px;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      /* PURPLE LEFT CARD */
+      .purple-box {
+        background: linear-gradient(to bottom right, #7a1fa2, #4c1d95);
+        color: white;
+        margin: 40px;
+        border-radius: 25px;
+        padding: 70px;
+        width: 700px;
+        min-height: 380px;
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.35),
+          0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* STATS CARD */
+      .stats-card {
+        background: white;
+        height: 500px;
+        border-radius: 25px;
+        padding: 25px;
+        margin-top: 25px;
+        margin-bottom: 40px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.15),
+          0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* STAT IMAGE BOX */
+      .stats-img {
+        height: 400px;
+        border-radius: 18px;
+        overflow: hidden;
+        margin-bottom: 15px;
+      }
+
+      /* GENERAL PAGE TYPOGRAPHY */
+      .section-container {
+        padding: 60px 50px;
+      }
+
+      h2 {
+        color: #5b1a82;
+        font-weight: 700;
+      }
+
+      .bold-line {
+        font-weight: bold;
+        color: #5b1a82;
+      }
+      .hero-screening {
+        height: 620px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(25, 0, 58, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("doc.jpg"); /* replace with your hero image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      /* optional text styling */
+      .hero-screening h1 {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    </style>
+
+    <!-- Social Media Icons (Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body style="background-color: #6a1b9a">
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      style="padding-right: 980px; padding-top: 400px"
+      class="hero-screening d-flex"
+    >
+      <div class="container text-white">
+        <h1
+          style="font-size: 100px; padding-left: 100px; padding-bottom: 40px"
+          class="display-4 fw-bold"
+        >
+          CANCER SCREENING
+        </h1>
+      </div>
+    </section>
+    <div style="background-color: white" class="row gx-5">
+      <!-- LEFT PURPLE CARD -->
+      <div class="col-lg-5">
+        <div class="purple-box">
+          <h4 class="fs-3"><strong>Objective</strong></h4>
+          <p class="fs-4 fw-lighter">
+            To provide specialized cancer check-ups for underprivileged men and
+            women, raise awareness about cancer, its risk factors, the
+            importance of early detection, regular screening, and the benefits
+            of cancer insurance.
+          </p>
+          <br /><br />
+          <h4 class="fs-3"><strong>Coverage</strong></h4>
+          <p class="fs-4">
+            Screening camps are held in both urban and rural areas across India,
+            focusing on vulnerable and underprivileged communities.
+          </p>
+          <br /><br />
+          <h4 class="fs-3"><strong>Operations</strong></h4>
+          <ul class="fs-4">
+            Qualified medical staff from the Indian Cancer Society conduct:
+            <li>Oral examinations</li>
+            <li>Clinical breast & gynecological exams</li>
+            <li>Pap smears for women</li>
+            <li>Mammography for women aged 45+ or postmenopausal</li>
+          </ul>
+          <br /><br /><br /><br /><br />
+          <p style="color: #ff7b00" class="fs-3 fw-bolder">
+            Reports are delivered within 15 working days. Suspected cases
+            receive follow-up calls and assistance for further hospital
+            evaluation.
+          </p>
+        </div>
+      </div>
+
+      <!-- RIGHT TEXT + STATS -->
+      <div style="padding-left: 100px" class="col-lg-6">
+        <p class="display-6 bold-line mt-5">
+          The Indian Cancer Society strongly believes that "Many cancers are
+          treatable, when detected early."
+        </p>
+
+        <p class="fs-4">
+          Screening looks for early signs of cancer or pre-cancerous conditions
+          before any symptoms appear. It can help spot cancers at an early
+          stage, when treatment is more likely to be successful and the chances
+          of survival are much better. Hence, screening has been the core
+          objective of our cancer screening program.
+        </p>
+
+        <p class="fs-4">
+          The three most commonly occurring cancers in India are those of the
+          breast, uterine cervix and lip/oral cavity. Together, they account for
+          approximately 35% of all cancers in India, and constitute a public
+          health priority. Screening is effective in the prevention and early
+          detection of breast cancer, cervical cancer and oral cancer.
+        </p>
+        <p class="mt-3 fs-4">
+          For further details contact:<br />
+          <a href="mailto:drpande@indiancancersociety.org"
+            >drpande@indiancancersociety.org</a
+          >
+        </p>
+        <!-- Stats card -->
+        <div class="stats-card">
+          <div style="height: 1200px" class="stats-img">
+            <img src="cs.jpg" class="img-fluid" alt="stats visual" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br />
+              Jerbai Wadia Road, <br />
+              Bhoiwada, Parel, <br />
+              Mumbai – 400012 (India) <br />
+              +91-22-2413 9445 / 51 <br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICS Careers Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Zain Font -->
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* ========================= NEW NAVBAR STYLES ========================= */
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 25px;
+      }
+
+      /* LOGO overlapping both navbars */
+      .double-logo {
+        position: absolute;
+        left: 50px;
+        top: 20px;
+        z-index: 9999;
+        height: 100px;
+      }
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+
+      .helpline-text {
+        position: relative;
+        top: 4 px;
+        left: 240px;
+        font-size: 1 rem;
+      }
+
+      @media (max-width: 300px) {
+        .ics-logo {
+          height: 100px;
+        }
+      }
+      /* ========================= CAREERS PAGE (UNCHANGED) ========================= */
+
+      .careers-hero h1 {
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        color: white;
+        font-size: 3rem;
+        font-weight: 700;
+      }
+      .hero-text {
+        font-size: 100px;
+        font-weight: 700;
+        color: white;
+        text-shadow: 0px 3px 10px rgba(0, 0, 0, 0.4);
+      }
+      .careers-section {
+        padding: 60px 10%;
+      }
+
+      .careers-section h2 {
+        color: #5a0f7c;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .job-card {
+        background: white;
+        border-left: 5px solid #5a0f7c;
+        padding: 25px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .job-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #5a0f7c;
+      }
+
+      .tag {
+        padding: 6px 15px;
+        border: 1px solid #5a0f7c;
+        color: #5a0f7c;
+        border-radius: 20px;
+        margin-right: 10px;
+        font-size: 0.9rem;
+      }
+
+      .apply-now {
+        color: #5a0f7c;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .hero {
+        width: 100%;
+        height: 550px;
+        background-image: linear-gradient(
+            to bottom right,
+            rgba(0, 0, 0, 0.75),
+            rgba(132, 0, 255, 0.4)
+          ),
+          url("Screenshot 2025-11-27 at 3.21.32 PM.png");
+        background-size: cover;
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        box-sizing: border-box;
+      }
+      /* FOOTER */
+      .ics-footer {
+        background: #5a0f7c;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer p,
+      .ics-footer li,
+      .ics-footer {
+        color: white !important;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+
+      .ics-footer a:hover {
+        color: white;
+      }
+
+      .social-icons a {
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgb(255, 255, 255);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ========================= CAREERS HERO ========================= -->
+    <!-- <div class="careers-hero">
+        <h1 style="font-size: 100px;">CAREERS</h1>
+    </div> -->
+    <div class="hero">
+      <div style="margin-left: 100px" class="hero-text">CAREERS</div>
+    </div>
+    <!-- ========================= CAREERS CONTENT ========================= -->
+    <section class="careers-section">
+      <h2>Be a part of our mission</h2>
+
+      <p>
+        Join us in creating a future where early detection, treatment, and
+        support are accessible to every Indian. At ICS, you’ll work with
+        passionate people committed to saving lives and empowering communities.
+      </p>
+
+      <!-- Job 1 -->
+      <div class="job-card mt-4">
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="job-title">Fundraising Manager</div>
+            <p class="mt-2">
+              Lead donor outreach, CSR partnerships, and long-term fundraising
+              strategies to help scale our cancer care programs.
+            </p>
+            <span class="tag">Full-time</span>
+            <span class="tag">On-site / Hybrid</span>
+          </div>
+          <a href="#" class="apply-now">Apply Now →</a>
+        </div>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="job-card">
+        <div class="d-flex justify-content-between">
+          <div>
+            <div class="job-title">Project Coordinator</div>
+            <p class="mt-2">
+              Support awareness drives, community programs, and cancer screening
+              camps, ensuring smooth execution.
+            </p>
+            <span class="tag">Full-time</span>
+            <span class="tag">On-site</span>
+          </div>
+          <a href="#" class="apply-now">Apply Now →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= FOOTER (NEW) ========================= -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 text-white">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74,<br />
+              Jerbai Wadia Road,<br />
+              Bhoiwada, Parel,<br />
+              Mumbai – 400012 (India)<br />
+              +91-22-2413 9445 / 51<br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <!-- ========================= LOGO OVERLAY ========================= -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

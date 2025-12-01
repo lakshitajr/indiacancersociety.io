@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.cdnfonts.com/css/zain" rel="stylesheet" />
+
+    <title>ICS Double Navbar</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Zain", sans-serif;
+      }
+
+      /* Top Gradient Navbar */
+      .ics-gradient {
+        background: linear-gradient(to right, #5a0f7c, #ff7b00);
+        color: white;
+      }
+
+      .ics-logo {
+        height: 75px;
+      }
+      /* LOGO overlapping both navbars */
+      .double-logo {
+        position: absolute;
+        left: 50px; /* move horizontally */
+        top: 20px; /* adjust how much it overlaps */
+        z-index: 9999; /* stays on top of both navbars */
+        height: 100px; /* adjust size */
+      }
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+      .top-nav .nav-link {
+        color: white !important;
+        font-size: 1.2 rem;
+        padding: 10px 18px !important;
+      }
+
+      /* Second Navbar */
+      .subnav-bar {
+        background: linear-gradient(to right, #eed4d9, #ffa24d);
+      }
+      .subnav-bar .nav-link {
+        color: #5a0f7c !important;
+        font-weight: 700;
+        font-size: 1 rem;
+        padding: 15px 18px !important;
+      }
+      .helpline-text {
+        position: relative;
+        top: 10px; /* move down */
+        left: 240px; /* move right */
+        font-size: 1.5rem;
+        /* or right: 40px; for pushing it left */
+      }
+
+      @media (max-width: 900px) {
+        .ics-logo {
+          height: 1000px;
+        }
+      }
+
+      /* FOOTER STYLES */
+      .ics-footer {
+        background: #5a0f7c;
+        color: white;
+        padding: 40px 0 20px;
+        margin-top: 40px;
+      }
+
+      .ics-footer .footer-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+
+      .ics-footer a {
+        color: #ffb36b;
+        text-decoration: none;
+      }
+      .ics-footer a:hover {
+        color: white;
+      }
+      .social-icons a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 26px;
+        color: white;
+      }
+      .social-icons a:hover {
+        color: #ffb36b;
+      }
+      .section-title {
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-size: 3rem;
+        font-weight: 800;
+        margin: 40px 0;
+      }
+      .event-card {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 30px;
+        padding: 40px; /* increased size */
+        min-height: 620px; /* makes cards taller */
+        box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.18),
+          0 6px 20px rgba(0, 0, 0, 0.12);
+        margin-bottom: 40px; /* more spacing between cards */
+      }
+      .btn-rounded {
+        border-radius: 30px !important;
+        padding: 10px 25px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 25px;
+        padding-top: 15px;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    </style>
+
+    <!-- Social Media Icons (Bootstrap Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body style="background: linear-gradient(#5e0c7d, #f5f5f5)">
+    <!-- ========================= TOP NAVBAR ========================= -->
+    <nav class="navbar navbar-expand-lg ics-gradient py-2 top-nav fw-lighter">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <!-- <img src="icslogo.png" class="ics-logo" alt="ICS Logo" /> -->
+        </a>
+
+        <span class="helpline-text text-white d-none d-md-inline-block fs-5">
+          Cancer Helpline - +91 67586797809
+        </span>
+
+        <button
+          class="navbar-toggler bg-light ms-auto"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#topNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="topNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="aboutus.html">About us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="info.html">Cancer info</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="donate.html"
+                data-bs-toggle="dropdown"
+                >Partner with us</a
+              >
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item fs-5" href="donate.html">Donate</a>
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="volunteer.html"
+                    >Volunteer</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="collab.html"
+                    >Collaborate</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="partners.html"
+                    >Our Partners</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="events.html">Whats new</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="careers.html">Careers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="contactus.html">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="index.html">
+      <img src="icslogo.png" class="double-logo" alt="ICS Logo" />
+    </a>
+    <!-- ========================= SECOND NAVBAR ========================= -->
+    <nav class="navbar navbar-expand subnav-bar py-0">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#secondNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="secondNavbar"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="awareness.html">Awareness</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle fs-5"
+                href="#"
+                data-bs-toggle="dropdown"
+                >What we do</a
+              >
+              <ul
+                style="background-color: #ffffff; font-weight: -200px"
+                class="dropdown-menu"
+              >
+                <li>
+                  <a class="dropdown-item fs-5" href="screening.html"
+                    >Screening</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="cancercure.html"
+                    >Cancer Cure</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="survivorship.html"
+                    >Survivorship & Rehab</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item fs-5" href="ugam.html"
+                    >UGAM Support Group</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="rre.html"
+                >Registry, Research &<br />Education</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1 style="font-size: 100px" class="section-title">
+        EVENTS & HAPPENINGS
+      </h1>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="event-card">
+            <h4 style="color: #5a0f7c" class="fs-2 fw-bolder">
+              UGAM - 16th Anniversary Celebration
+            </h4>
+            <p class="fs-4">
+              01-Jun-2025 , 10.00 am <br />
+              Y B Chavan aAuditorium<br />
+            </p>
+            <img
+              src="ugam-logo.png"
+              class="img-fluid rounded-4 shadow-sm rounded mb-3"
+              alt="Tata Marathon Image"
+            />
+            <br /><br /><br /><br /><br /><br /><br />
+            <button class="btn btn-primary btn-rounded fs-4 fw-bolder">
+              REGISTER FOR EVENT
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="event-card">
+            <h4 style="color: #5a0f7c" class="fs-2 fw-bolder">
+              ICS Supplement’s in Indian Express & Financial Express
+            </h4>
+            <p class="fs-4">17-Feb-2025<br />ICS - Rise Against Cancer</p>
+            <img
+              src="sup.jpg"
+              class="img-fluid rounded-4 shadow-sm rounded mb-3"
+              alt="Tata Marathon Image"
+            />
+            <br /><br />
+            <button class="btn btn-primary btn-rounded fs-4">
+              REGISTER FOR EVENT
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="event-card">
+            <h4 style="color: #5a0f7c" class="fs-1 fw-bolder">
+              RELAY FOR LIFE
+            </h4>
+            <p class="fs-4">
+              Relay for Life brings communities together to honor survivors,
+              remember loved ones lost to cancer and support the ongoing fight
+              against cancer. Over 4 million people across 26+ countries
+              participate each year.
+            </p>
+            <br />
+            <img
+              src="relay4life.jpg"
+              class="img-fluid rounded-4 shadow-sm rounded mb-3"
+              alt="Relay4life"
+            />
+            <br /><br /><br /><br /><br /><br /><br />
+            <button class="btn btn-dark btn-rounded fs-4">KNOW MORE</button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="event-card">
+            <h4 style="color: #5a0f7c" class="fs-1 fw-bolder">
+              Tata Mumbai Marathon – 2024
+            </h4>
+            <img
+              style="height: 100%"
+              src="tatam.jpg"
+              class="img-fluid rounded-4 shadow-sm rounded mb-3"
+              alt="Tata Marathon Image"
+            />
+            <br />
+            <p class="fs-4">
+              19th edition of the prestigious Tata Mumbai Marathon (TMM), also
+              widely regarded as Asia's premier running event. It is not just
+              India’s biggest sports event, but also the biggest charity event
+              in Asia. It’s an excellent platform to partner and give back to
+              society. All the funds raised in the Marathon will support cancer
+              victors in their
+            </p>
+            <br /><br /><br />
+            <button class="btn btn-dark btn-rounded fs-4">KNOW MORE</button>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="event-card">
+            <h4 style="color: #5a0f7c" class="fs-1 fw-bolder">
+              Painting a Future - Art Against Cancer
+            </h4>
+            <img
+              src="painting.png"
+              class="img-fluid rounded-4 shadow-sm rounded mb-3"
+              alt="Painting Exhibition Image"
+            />
+            <p class="fs-4">
+              The Indian Cancer Society, founded in 1951 by Mr. Naval Tata and
+              Dr. D. J. Jussawalla, has led India’s fight against cancer for 73
+              years. As we celebrate our 74th Founders Day, we proudly present
+              “Painting a Future Art Against Cancer,” an exhibition of
+              contemporary Indian art. Each curated piece carries a meaningful
+              message and visual appeal. We invite art lovers to support this
+              initiative. Your purchase not only brings home beautiful artwork
+              but also helps underprivileged cancer patients and survivors. All
+              proceeds will advance ICS’s mission across the cancer care
+              continuum. For more details, please write to us
+              at sonali.b@indiancancersociety.org or contact on +91-99673 64938
+            </p>
+            <br /><br />
+            <button class="btn btn-success btn-rounded fs-4 me-4">
+              BUY A PAINTING</button
+            ><br />
+            <button class="btn btn-secondary btn-rounded fs-4">
+              VIEW BROCHURE
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="ics-footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Indian Cancer Society</div>
+            <p>
+              Indian Cancer Society 74, <br />
+              Jerbai Wadia Road, <br />
+              Bhoiwada, Parel, <br />
+              Mumbai – 400012 (India) <br />
+              +91-22-2413 9445 / 51 <br />
+              info@indiancancersociety.org
+            </p>
+          </div>
+
+          <!-- Middle Column -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Quick Links</div>
+            <p><a href="aboutus.html">About us</a></p>
+            <p><a href="info.html">Cancer info</a></p>
+            <p><a href="donate.html">Donate Now</a></p>
+            <p><a href="careers.html">Careers</a></p>
+            <p><a href="awareness.html">Awareness</a></p>
+            <p><a href="screening.html">What we do</a></p>
+            <p><a href="rre.html">Registry,Research & Education</a></p>
+          </div>
+
+          <!-- Right Column - Social Icons -->
+          <div class="col-md-4 mb-4">
+            <div class="footer-title">Connect With Us</div>
+            <div class="social-icons">
+              <a href="#"><i class="bi bi-facebook"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2025 Indian Cancer Society | All Rights Reserved
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
